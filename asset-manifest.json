@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/BOXage/static/css/main.f3e55f2a.chunk.css",
+    "main.js": "/BOXage/static/js/main.6df6f601.chunk.js",
+    "main.js.map": "/BOXage/static/js/main.6df6f601.chunk.js.map",
+    "runtime-main.js": "/BOXage/static/js/runtime-main.fbcecb04.js",
+    "runtime-main.js.map": "/BOXage/static/js/runtime-main.fbcecb04.js.map",
+    "static/css/2.22ca87da.chunk.css": "/BOXage/static/css/2.22ca87da.chunk.css",
+    "static/js/2.66b0cd75.chunk.js": "/BOXage/static/js/2.66b0cd75.chunk.js",
+    "static/js/2.66b0cd75.chunk.js.map": "/BOXage/static/js/2.66b0cd75.chunk.js.map",
+    "index.html": "/BOXage/index.html",
+    "precache-manifest.48e6eca969db743a2735fd5c7c31dd17.js": "/BOXage/precache-manifest.48e6eca969db743a2735fd5c7c31dd17.js",
+    "service-worker.js": "/BOXage/service-worker.js",
+    "static/css/2.22ca87da.chunk.css.map": "/BOXage/static/css/2.22ca87da.chunk.css.map",
+    "static/css/main.f3e55f2a.chunk.css.map": "/BOXage/static/css/main.f3e55f2a.chunk.css.map",
+    "static/media/add_c.svg": "/BOXage/static/media/add_c.90dd671c.svg",
+    "static/media/add_to_cart.svg": "/BOXage/static/media/add_to_cart.19d2da71.svg",
+    "static/media/item.svg": "/BOXage/static/media/item.1dc23fdb.svg",
+    "static/media/shipping.svg": "/BOXage/static/media/shipping.dc0815b0.svg",
+    "static/media/video.mp4": "/BOXage/static/media/video.887a8a80.mp4"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fbcecb04.js",
+    "static/css/2.22ca87da.chunk.css",
+    "static/js/2.66b0cd75.chunk.js",
+    "static/css/main.f3e55f2a.chunk.css",
+    "static/js/main.6df6f601.chunk.js"
+  ]
+}
