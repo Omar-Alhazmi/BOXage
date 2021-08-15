@@ -93,10 +93,6 @@ contract BOXage {
         require(items[sku].buyer == msg.sender, "Unauthorized");
         _;
     }
-    // modifier  isCarrier {
-    //     require(carriers[msg.sender].isCarrier,"Unauthorized");
-    //     _;
-    // }
     modifier isCarrier(uint256 sku) {
         require(
             items[sku].buyer != msg.sender && items[sku].seller != msg.sender,
@@ -104,7 +100,6 @@ contract BOXage {
         );
         _;
     }
-
     modifier belongTo(uint256 sku) {
         require(
             items[sku].seller == msg.sender ||
@@ -161,7 +156,6 @@ contract BOXage {
 
     /* ======================== end of modifiers.================================== */
 
-
     //===================================== post functions ======================================================================//
     constructor() public {
         /* Here, set the owner as the person who instantiated the contract
@@ -198,7 +192,7 @@ contract BOXage {
             seller: msg.sender
         });
         customerCount = customerCount + 1;
-            return  string(abi.encodePacked(_name,": Has been added successfully"));
+        return string(abi.encodePacked(_name, ": Has been added successfully"));
     }
 
     function addItem(string memory _name)
@@ -218,7 +212,7 @@ contract BOXage {
             carrier: address(0)
         });
         skuCount = skuCount + 1;
-        return  string(abi.encodePacked(_name,": has been added successfully"));
+        return string(abi.encodePacked(_name, ": has been added successfully"));
     }
 
     function buyItem(
@@ -235,14 +229,26 @@ contract BOXage {
         items[_sku].buyer = msg.sender;
         items[_sku].state = State.Processing;
         emit Processing(_sku);
-        return string(abi.encodePacked(items[_sku].name,"=> Has Been Checked Out By ",_name));
+        return
+            string(
+                abi.encodePacked(
+                    items[_sku].name,
+                    "=> Has Been Checked Out By ",
+                    _name
+                )
+            );
     }
 
-    function shipItem(uint256 _sku) public isCarrier(_sku) processing(_sku) returns (string memory) {
+    function shipItem(uint256 _sku)
+        public
+        isCarrier(_sku)
+        processing(_sku)
+        returns (string memory)
+    {
         items[_sku].carrier = msg.sender;
         items[_sku].state = State.Shipped;
         emit Shipped(_sku);
-    return string(abi.encodePacked(items[_sku].name,": Out with Carrier"));
+        return string(abi.encodePacked(items[_sku].name, ": Out with Carrier"));
     }
 
     //===================================== End of Post functions ====================================================================================================//
