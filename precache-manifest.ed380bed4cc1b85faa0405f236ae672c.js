@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "39c1c71226500b1c4d4865a93aff866c",
+    "revision": "8b4c1fc6fd0054d2ac576fe18add4742",
     "url": "/BOXage/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/BOXage/static/css/2.22ca87da.chunk.css"
   },
   {
-    "revision": "33c9ec8a3d3d143a491f",
+    "revision": "4a3cbd83bde931ed5ca6",
     "url": "/BOXage/static/css/main.f3e55f2a.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/BOXage/static/js/2.66b0cd75.chunk.js"
   },
   {
-    "revision": "33c9ec8a3d3d143a491f",
-    "url": "/BOXage/static/js/main.674a46a5.chunk.js"
+    "revision": "4a3cbd83bde931ed5ca6",
+    "url": "/BOXage/static/js/main.3f6657b2.chunk.js"
   },
   {
     "revision": "53ac6862f0c6f57c7e24",
