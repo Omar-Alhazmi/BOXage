@@ -59,11 +59,9 @@ export default class Display extends Component {
         const skuCount = await this.state.contract.methods.skuCount().call();
         if (skuCount > 0) {
           let fetchItem = []
-          //  //this.state.contract.methods.fetchItem(1).call();
           console.log("skuCount: " + skuCount)
           console.log(fetchItem)
           console.log(this.state.contract.methods)
-          // await skuCount.forEach(function(item){ ItemInfo.push(this.state.contract.methods.fetchItem(item).call())});
           for (let i = 0; i < skuCount; i++) {
             fetchItem.push(await this.state.contract.methods.fetchItem(i).call())
           }
