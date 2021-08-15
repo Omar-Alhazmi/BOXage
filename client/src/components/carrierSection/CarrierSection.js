@@ -77,9 +77,9 @@ export default class CarrierSection extends Component {
       }
     })
     try {
-      // let fetchItem = [];
-      // fetchItem.push(await contract.methods.fetchItem(sku).call())
-      // this.setState({ fetchItem })
+      let fetchItem = [];
+      fetchItem.push(await contract.methods.fetchItem(sku).call())
+      this.setState({ fetchItem })
     } catch (err) {
       Swal.fire({ icon: 'error', title: `Something Went Wrong`, showConfirmButton: false, timer: 1500 });
     }
@@ -89,9 +89,7 @@ export default class CarrierSection extends Component {
       [event.target.name]: event.target.value
     });
   render() {
-    const { sku , accounts} = this.state
-    console.log(accounts);
-
+    const { sku, accounts } = this.state
     return (
       <div id="CarrierSection">
         <CustomerStyled.InfoContainer lightBg>
