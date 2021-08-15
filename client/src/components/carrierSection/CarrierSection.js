@@ -1,7 +1,7 @@
 import { Button } from '../Buttons'
 import React, { Component } from 'react'
 import * as CustomerStyled from '../customerSection/CustomerStyled';
-import SupplyChain from "../../contracts/SupplyChain.json";
+import BOXage from "../../contracts/BOXage.json";
 import getWeb3 from "../../getWeb3";
 import Web3 from 'web3'
 import Swal from "sweetalert2";
@@ -34,7 +34,7 @@ export default class CarrierSection extends Component {
       web3: null,
       contract: null,
       sku: 0,
-      Cr_fitchItem: null,
+      fetchItem: null,
     };
   }
   componentDidMount = async () => {
@@ -45,9 +45,9 @@ export default class CarrierSection extends Component {
       const accounts = await web3.eth.getAccounts();
       // Get the contract instance.
       const networkId = await web3.eth.net.getId();
-      const deployedNetwork = SupplyChain.networks[networkId];
+      const deployedNetwork = BOXage.networks[networkId];
       const instance = new web3.eth.Contract(
-        SupplyChain.abi,
+        BOXage.abi,
         deployedNetwork && deployedNetwork.address,
       );
 
@@ -77,9 +77,9 @@ export default class CarrierSection extends Component {
       }
     })
     try {
-      let Cr_fitchItem = [];
-      Cr_fitchItem.push(await contract.methods.fetchItem(sku).call())
-      this.setState({ Cr_fitchItem })
+      // let fetchItem = [];
+      // fetchItem.push(await contract.methods.fetchItem(sku).call())
+      // this.setState({ fetchItem })
     } catch (err) {
       Swal.fire({ icon: 'error', title: `Something Went Wrong`, showConfirmButton: false, timer: 1500 });
     }
@@ -89,7 +89,9 @@ export default class CarrierSection extends Component {
       [event.target.name]: event.target.value
     });
   render() {
-    const { sku } = this.state
+    const { sku , accounts} = this.state
+    console.log(accounts);
+
     return (
       <div id="CarrierSection">
         <CustomerStyled.InfoContainer lightBg>

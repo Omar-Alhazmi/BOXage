@@ -241,7 +241,7 @@ contract BOXage {
 
     function shipItem(uint256 _sku)
         public
-        isCarrier(_sku)
+        // isCarrier(_sku)
         processing(_sku)
         returns (string memory)
     {

@@ -1,7 +1,7 @@
 import { Button } from '../Buttons'
 import React, { Component } from 'react'
 import * as CustomerStyled from './CustomerStyled';
-import SupplyChain from "../../contracts/SupplyChain.json";
+import BOXage from "../../contracts/BOXage.json";
 import getWeb3 from "../../getWeb3";
 import Web3 from 'web3'
 import Swal from "sweetalert2";
@@ -47,9 +47,9 @@ export default class CustomerRegistration extends Component {
       const accounts = await web3.eth.getAccounts();
       // Get the contract instance.
       const networkId = await web3.eth.net.getId();
-      const deployedNetwork = SupplyChain.networks[networkId];
+      const deployedNetwork = BOXage.networks[networkId];
       const instance = new web3.eth.Contract(
-        SupplyChain.abi,
+        BOXage.abi,
         deployedNetwork && deployedNetwork.address,
       );
 
@@ -162,6 +162,3 @@ export default class CustomerRegistration extends Component {
     )
   }
 }
-
-
-
