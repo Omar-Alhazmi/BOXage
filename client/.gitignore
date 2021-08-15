@@ -1,3 +1,4 @@
+*.sol linguist-language=Solidity
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
@@ -17,6 +18,8 @@
 .env.development.local
 .env.test.local
 .env.production.local
+.key-secret
+.mnemonic-secret
 
 npm-debug.log*
 yarn-debug.log*

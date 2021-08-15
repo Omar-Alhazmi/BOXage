@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import { FaBox, FaRegArrowAltCircleRight, FaBoxes, FaShippingFast } from "react-icons/fa";
-import SupplyChain from "../../contracts/SupplyChain.json";
+import BOXage from "../../contracts/BOXage.json";
 import getWeb3 from "../../getWeb3";
 import Web3 from 'web3'
 import Swal from "sweetalert2";
@@ -46,9 +46,9 @@ export default class Display extends Component {
       const accounts = await web3.eth.getAccounts();
       // Get the contract instance.
       const networkId = await web3.eth.net.getId();
-      const deployedNetwork = SupplyChain.networks[networkId];
+      const deployedNetwork = BOXage.networks[networkId];
       const instance = new web3.eth.Contract(
-        SupplyChain.abi,
+        BOXage.abi,
         deployedNetwork && deployedNetwork.address,
       );
 
@@ -59,11 +59,9 @@ export default class Display extends Component {
         const skuCount = await this.state.contract.methods.skuCount().call();
         if (skuCount > 0) {
           let fetchItem = []
-          //  //this.state.contract.methods.fetchItem(1).call();
           console.log("skuCount: " + skuCount)
           console.log(fetchItem)
           console.log(this.state.contract.methods)
-          // await skuCount.forEach(function(item){ ItemInfo.push(this.state.contract.methods.fetchItem(item).call())});
           for (let i = 0; i < skuCount; i++) {
             fetchItem.push(await this.state.contract.methods.fetchItem(i).call())
           }
